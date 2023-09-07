@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Photo Studio">
+    <meta name="keywords" content="Photo Studio, Visai innovations, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Photo Studio | Visai Innovations</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Quantico:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    
+
+    <!-- Header Section Begin -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" >
+        <a href="index.html"><img src="img/company_logo.png" class="logoo"></a>
+        
+            
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                  aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa-solid fa-bars"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav  ml-auto m-2 justify-content-between">
+                      <span class="pr-4"><a class="nav-link option "   href="index.html">HOME</a></span>
+                      <span class="pr-4"><a class="nav-link option"    href="about.html">About</a></span>
+                      <span class="pr-4"><a class="nav-link option active"   href="gallery.html">Events</a></span>
+                      <span class="pr-4"><a class="nav-link option"   href="services.html">services</a></span>
+                      <span class="pr-4"><a class="nav-link option"  href="pricing.html">Pricing</a></span>
+                      <span class="pr-4"><a class="nav-link option"  href="contact.html">contact us</a></span>
+                  </div>
+              </div>
+          
+      </nav>
+    <!-- Header End -->
+
+    <!-- Breadcrumb Begin -->
+    
+    <!-- Breadcrumb End -->
+
+    <!-- Gallery Section Begin -->
+    <br>
+
+    <section class="portfolio-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Our latest works</h2>
+                    </div>
+                    <div class="filter-controls">
+                        <ul>
+                          <li class="filter-button" class="active" data-filter="all">All</li>
+                          <li class="filter-button" data-filter="wedding">Wedding</li>
+                          <li class="filter-button" data-filter="puberty">Puberty</li>
+                          <li class="filter-button" data-filter="baby shower">Baby shower</li>
+                        </ul>
+                      </div>
+                      <div style="margin-left: 7%;margin-right: 7%;">
+                        <div class="mm-columns" id="image-container">
+                            <!-- Images will be loaded here using JavaScript -->
+                          </div>
+                          <div id="image-modal" class="modal">
+                            <span class="close">&times;</span>
+                            <img class="modal-content" id="full-size-image">
+                          </div>
+                      </div>
+        <div class="load-more-btn">
+            <a href="#">Load More</a>
+        </div>
+    </section>
+    <!-- Gallery Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="fs-about">
+                        <div class="fa-logo">
+                            <a href="index.html">
+                                <!-- <h2 style="color: white">logo</h2> -->
+                                  <img src="img/company_logo.png" style="height: 100px; width: 300px;"></img>
+                              </a>
+                        </div>
+                        <p>Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                            et dolore magna aliqua.</p>
+                        <div class="fa-social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="fs-widget">
+                        <h5>Instagram</h5>
+                        <div class="fw-instagram">
+                            <img src="img/instagram/insta-1.jpg" alt="">
+                            <img src="img/instagram/insta-2.jpg" alt="">
+                            <img src="img/instagram/insta-3.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="fs-widget">
+                        <h5>Quick links</h5>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="pricing.html">Pricing</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="fs-widget">
+                        <h5>Subscribe</h5>
+                        <p>Imolor amet consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                        <div class="fw-subscribe">
+                            <form action="#">
+                                <input type="text" placeholder="Email">
+                                <button type="submit"><i class="fa fa-send"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="copyright-text">
+                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This
+                            Website is made with <i class="fa fa-heart" aria-hidden="true"></i> by Visai innovations
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Search model Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search model end -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

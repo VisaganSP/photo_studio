@@ -31,7 +31,16 @@
 
 /* Template default CSS
 /*----------------------------------------*/
-
+.logoo{
+    height:70px;
+    width:250px;
+}
+@media only screen and (max-width:700px){
+    .logoo{
+        height:50px;
+        width:170px;
+    } 
+}
 html,
 body {
 	height: 100%;
@@ -51,6 +60,37 @@ h6 {
 	font-weight: 400;
 	font-family: "Quantico", sans-serif;
 }
+
+      .nav-link {
+        font-family: "Poppins", sans-serif;
+        font-weight: bold !important;
+        text-transform: uppercase;
+        color: black !important;
+      }
+
+      .nav-link.active {
+        border-bottom: 3px solid darkgreen !important;
+        color: darkgreen !important;
+      }
+
+      .nav-link:hover {
+        color: lightgreen !important;
+      }
+
+      @media only screen and (max-width: 770px) {
+        .nav-link.active {
+          border-bottom: none !important;
+        }
+
+        .navbar-toggler {
+          border: none;
+        }
+      }
+      .fa-bars {
+        font-size: 1.5em;
+        color: darkgreen;
+      }
+
 
 h1 {
 	font-size: 70px;
@@ -195,7 +235,7 @@ ol {
 	background: #000;
 }
 
-/* .loader {
+.loader {
 	width: 40px;
 	height: 40px;
 	position: absolute;
@@ -245,7 +285,7 @@ ol {
 		border: 4px solid #f44336;
 		border-left-color: transparent;
 	}
-} */
+}
 
 .spacial-controls {
 	position: fixed;
@@ -696,9 +736,9 @@ ol {
 	margin-right: 20px;
 	margin-bottom: 20px;
 	position: relative;
-	z-index: 1;
-	display: -webkit-box;
-	display: -ms-flexbox;
+	/* z-index: 1; */
+	/* display: -webkit-box;
+	display: -ms-flexbox; */
 	display: flex;
 	-webkit-box-align: center;
 	-ms-flex-align: center;
@@ -2299,6 +2339,37 @@ ol {
 
 .map {
 	height: 635px;
+	margin-top: 5.5%;
+}
+@media only screen and (min-width:300px){
+	.map {
+		height: 635px;
+		margin-top: 20%;
+	}
+}
+@media only screen and (min-width:340px){
+	.map {
+		height: 635px;
+		margin-top: 17%;
+	}
+}
+@media only screen and (min-width:410px){
+	.map {
+		height: 635px;
+		margin-top: 16%;
+	}
+}
+@media only screen and (min-width:450px){
+	.map {
+		height: 635px;
+		margin-top: 12%;
+	}
+}
+@media only screen and (min-width:800px){
+	.map {
+		height: 635px;
+		margin-top: 6%;
+	}
 }
 
 .map iframe {

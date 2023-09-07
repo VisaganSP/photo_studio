@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css" />
     <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="grid.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -39,40 +40,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <style>
-      .nav-link {
-        font-family: "Poppins", sans-serif;
-        font-weight: bold !important;
-        text-transform: uppercase;
-        color: black !important;
-      }
-
-      .nav-link.active {
-        border-bottom: 3px solid darkgreen !important;
-        color: darkgreen !important;
-      }
-
-      .nav-link:hover {
-        color: lightgreen !important;
-      }
-
-      @media only screen and (max-width: 770px) {
-        .nav-link.active {
-          border-bottom: none !important;
-        }
-
-        .navbar-toggler {
-          border: none;
-        }
-      }
-      .fa-bars {
-        font-size: 1.5em;
-        color: darkgreen;
-      }
-    </style>
+    
   </head>
 
-  <body>
+  <body onload="loadImages('all');">
     <!-- Page Preloder -->
     <div id="preloder">
       <div class="loader"></div>
@@ -80,40 +51,25 @@
 
     <!-- Header Section Begin -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <img src="img/company_logo.png" style="height: 100px; width: 300px;"></img>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <i class="fa-solid fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav ml-auto m-3 justify-content-between">
-            <div class="pr-4">
-              <a class="nav-link active" href="index.html">HOME</a>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" >
+      <a href="index.html"><img src="img/company_logo.png" class="logoo"></a>
+      
+          
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav  ml-auto m-2 justify-content-between">
+                    <span class="pr-4"><a class="nav-link option active"   href="index.html">HOME</a></span>
+                    <span class="pr-4"><a class="nav-link option"    href="about.html">About</a></span>
+                    <span class="pr-4"><a class="nav-link option "   href="gallery.html">Events</a></span>
+                    <span class="pr-4"><a class="nav-link option"   href="services.html">services</a></span>
+                    <span class="pr-4"><a class="nav-link option"  href="pricing.html">Pricing</a></span>
+                    <span class="pr-4"><a class="nav-link option"  href="contact.html">contact us</a></span>
+                </div>
             </div>
-            <div class="pr-4">
-              <a class="nav-link" href="about.html">About</a>
-            </div>
-            <div class="pr-4">
-              <a class="nav-link" href="gallery.html">Events</a>
-            </div>
-            <div class="pr-4">
-              <a class="nav-link" href="services.html">services</a>
-            </div>
-            <div class="pr-4">
-              <a class="nav-link" href="contact.html">contact us</a>
-            </div>
-          </div>
-        </div>
-      </div>
+        
     </nav>
 
     <!-- Hero Section Begin -->
@@ -269,7 +225,7 @@
 
     <!-- Portfolio Section Begin -->
     <section class="portfolio-section spad">
-      <div class="container">
+      <div class="container" >
         <div class="row">
           <div class="col-lg-12">
             <div class="section-title">
@@ -277,156 +233,25 @@
             </div>
             <div class="filter-controls">
               <ul>
-                <li class="active" data-filter="*">All</li>
-                <li data-filter=".wedding">Wedding</li>
-                <li data-filter=".puberty">Puberty</li>
-                <li data-filter=".baby">Baby shower</li>
-                <li data-filter=".travel">Travel</li>
+                <li class="filter-button" class="active" data-filter="all">All</li>
+                <li class="filter-button" data-filter="wedding">Wedding</li>
+                <li class="filter-button" data-filter="puberty">Puberty</li>
+                <li class="filter-button" data-filter="baby shower">Baby shower</li>
               </ul>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-12 p-0">
-            <div class="portfolio-filter">
-              <div
-                class="pf-item set-bg baby"
-                data-setbg="img/portfolio/bs1.jpg"
-              >
-                <a href="img/portfolio/bs1.jpg" class="pf-icon image-popup"
-                  ><span class="icon_plus"></span
-                ></a>
-                <div class="pf-text">
-                  <h4>Baby shower</h4>
-                  <span>Function</span>
-                </div>
+            <div style="margin-left: 10%;margin-right: 10%;">
+              <div class="mm-columns" id="image-container">
+                <!-- Images will be loaded here using JavaScript -->
               </div>
-              <div
-                class="pf-item set-bg baby"
-                data-setbg="img/portfolio/bs4.jpg"
-              >
-                <a href="img/portfolio/bs4.jpg" class="pf-icon image-popup"
-                  ><span class="icon_plus"></span
-                ></a>
-                <div class="pf-text">
-                  <h4>baby shower</h4>
-                  <span>Function</span>
-                </div>
-              </div>
-              <div
-                class="pf-item set-bg baby"
-                data-setbg="img/portfolio/bs5.jpg"
-              >
-                <a href="img/portfolio/bs5.jpg" class="pf-icon image-popup"
-                  ><span class="icon_plus"></span
-                ></a>
-                <div class="pf-text">
-                  <h4>baby shower</h4>
-                  <span>Function</span>
-                </div>
-              </div>
-              <div
-                class="pf-item set-bg wedding"
-                data-setbg="img/portfolio/w3.jpg"
-              >
-                <a href="img/portfolio/w3.jpg" class="pf-icon image-popup"
-                  ><span class="icon_plus"></span
-                ></a>
-                <div class="pf-text">
-                  <h4>Wedding</h4>
-                  <span>Function</span>
-                </div>
-              </div>
-              <div
-                class="pf-item set-bg wedding"
-                data-setbg="img/portfolio/w4.jpg"
-              >
-                <a href="img/portfolio/w4.jpg" class="pf-icon image-popup"
-                  ><span class="icon_plus"></span
-                ></a>
-                <div class="pf-text">
-                  <h4>wedding</h4>
-                  <span>Function</span>
-                </div>
-              </div>
-              <div
-                class="pf-item set-bg puberty"
-                data-setbg="img/portfolio/p3.jpeg"
-              >
-                <a href="img/portfolio/p3.jpeg" class="pf-icon image-popup"
-                  ><span class="icon_plus"></span
-                ></a>
-                <div class="pf-text">
-                  <h4>Puberty</h4>
-                  <span>Function</span>
-                </div>
-              </div>
-              <div
-                class="pf-item set-bg puberty"
-                data-setbg="img/portfolio/p2.jpeg"
-              >
-                <a href="img/portfolio/p2.jpeg" class="pf-icon image-popup"
-                  ><span class="icon_plus"></span
-                ></a>
-                <div class="pf-text">
-                  <h4>Puberty</h4>
-                  <span>Function</span>
-                </div>
-              </div>
-              <div
-                class="pf-item set-bg puberty"
-                data-setbg="img/portfolio/p1.jpeg"
-              >
-                <a href="img/portfolio/p1.jpeg" class="pf-icon image-popup"
-                  ><span class="icon_plus"></span
-                ></a>
-                <div class="pf-text">
-                  <h4>Puberty</h4>
-                  <span>Function</span>
-                </div>
-              </div>
-              <div
-                class="pf-item set-bg travel"
-                data-setbg="img/portfolio/travel.jpg"
-              >
-                <a href="img/portfolio/travel.jpg" class="pf-icon image-popup"
-                  ><span class="icon_plus"></span
-                ></a>
-                <div class="pf-text">
-                  <h4>Travel</h4>
-                  <span>Photography</span>
-                </div>
-              </div>
-              <div
-                class="pf-item set-bg wedding"
-                data-setbg="img/portfolio/wedding.jpg"
-              >
-                <a href="img/portfolio/wedding.jpg" class="pf-icon image-popup"
-                  ><span class="icon_plus"></span
-                ></a>
-                <div class="pf-text">
-                  <h4>Wedding</h4>
-                  <span>Function</span>
-                </div>
-              </div>
-              <div
-                class="pf-item set-bg wedding"
-                data-setbg="img/portfolio/wedd.jpg"
-              >
-                <a href="img/portfolio/wedd9.jpg" class="pf-icon image-popup"
-                  ><span class="icon_plus"></span
-                ></a>
-                <div class="pf-text">
-                  <h4>Wedding</h4>
-                  <span>Function</span>
-                </div>
+              <div id="image-modal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="full-size-image">
               </div>
             </div>
           </div>
         </div>
       </div>
+     
       <div class="load-more-btn">
         <a href="#">Load More</a>
       </div>
@@ -440,7 +265,7 @@
           <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="fs-about">
               <div class="fa-logo">
-                <a href="#">
+                <a href="index.html">
                   <!-- <h2 style="color: white">logo</h2> -->
                     <img src="img/company_logo.png" style="height: 100px; width: 300px;"></img>
                 </a>
@@ -474,11 +299,12 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-              </ul>
-              <ul>
+            </ul>
+            <ul>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="services.html">Services</a></li>
-              </ul>
+                <li><a href="pricing.html">Pricing</a></li>
+            </ul>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-6">
