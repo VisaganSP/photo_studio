@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <title>Responsive Image Grid with Filtering</title>
+    <style>
+        /* Style for the grid container */
+        .grid-container {
+            /* display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 10px; */
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+            justify-content: space-evenly;
+        }
+
+        /* Style for grid items (images) */
+        .grid-item {
+            position: relative;
+            overflow: hidden;
+            width:500px;
+            height: auto;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        /* .grid-item:hover img {
+            transform: scale(1.1);
+        } */
+
+        /* Style for the filter buttons */
+        .filter-buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .filter-buttons button {
+            margin: 5px;
+            padding: 5px 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="filter-buttons">
+        <button data-filter="all">All</button>
+        <button data-filter="wedding">Wedding</button>
+        <button data-filter="puberty">Puberty</button>
+        <button data-filter="baby">Baby shower</button>
+        <!-- Add more filter buttons as needed -->
+    </div>
+
+    <div class="grid-container" id="imageGrid">
+        <!-- Images will be dynamically added here using JavaScript -->
+    </div>
+
+    <script>
+        const imagesData = [
+            { src: "img/portfolio/baby.jpg", category: "baby" },
+            { src: "img/portfolio/w7.jpg", category: "wedding" },
+            { src: "img/portfolio/w4.jpg", category: "wedding" },
+            { src: "img/portfolio/bs.jpg", category: "baby" },
+            { src: "img/portfolio/w6.jpg", category: "wedding" },
+            { src: "img/portfolio/p1.jpg", category: "puberty" },
+            { src: "img/portfolio/p2.jpg", category: "puberty" },
+            { src: "img/portfolio/p3.jpg", category: "puberty" }
+            // Add more image data objects with src and category as needed
+        ];
+
+        const filterButtons = document.querySelectorAll(".filter-buttons button");
+        const imageGrid = document.getElementById("imageGrid");
+
+        filterButtons.forEach((button) => {
+            button.addEventListener("click", () => filterImages(button.dataset.filter));
+        });
+
+        function filterImages(category) {
+            imageGrid.innerHTML = "";
+            imagesData.forEach((imageData) => {
+                if (category === "all" || imageData.category === category) {
+                    const gridItem = document.createElement("div");
+                    gridItem.classList.add("grid-item");
+
+                    const img = document.createElement("img");
+                    img.src = imageData.src;
+                    img.alt = "Image";
+                    gridItem.appendChild(img);
+
+                    imageGrid.appendChild(gridItem);
+                }
+            });
+        }
+
+        // Initial load
+        filterImages("all");
+    </script>
+</body>
+</html>
