@@ -61,24 +61,24 @@ h6 {
 	font-family: "Quantico", sans-serif;
 }
 
-      .nav-link {
+      .option {
         font-family: "Poppins", sans-serif;
         font-weight: bold !important;
         text-transform: uppercase;
         color: black !important;
       }
 
-      .nav-link.active {
+      .option.activee {
         border-bottom: 3px solid darkgreen !important;
         color: darkgreen !important;
       }
 
-      .nav-link:hover {
+      .option:hover {
         color: lightgreen !important;
       }
 
       @media only screen and (max-width: 770px) {
-        .nav-link.active {
+        .option.activee {
           border-bottom: none !important;
         }
 
@@ -399,7 +399,7 @@ ol {
 	opacity: 1;
 }
 
-.nav-menu ul li.active a:after {
+.nav-menu ul li.activee a:after {
 	opacity: 1;
 }
 
@@ -479,17 +479,17 @@ ol {
   Hero
 -----------------------*/
 
-.hs-slider.owl-carousel .owl-item.active .hs-text h2 {
+.hs-slider.owl-carousel .owl-item.activee .hs-text h2 {
 	top: 0;
 	opacity: 1;
 }
 
-.hs-slider.owl-carousel .owl-item.active .hs-text p {
+.hs-slider.owl-carousel .owl-item.activee .hs-text p {
 	top: 0;
 	opacity: 1;
 }
 
-.hs-slider.owl-carousel .owl-item.active .hs-text .primary-btn {
+.hs-slider.owl-carousel .owl-item.activee .hs-text .primary-btn {
 	top: 0;
 	opacity: 1;
 }
@@ -611,11 +611,11 @@ ol {
 	padding-top: 24px;
 }
 
-.categories-slider.owl-carousel .owl-item.active .cs-item .cs-text h4 {
+.categories-slider.owl-carousel .owl-item.activee .cs-item .cs-text h4 {
 	opacity: 1;
 }
 
-.categories-slider.owl-carousel .owl-item.active .cs-item .cs-text span {
+.categories-slider.owl-carousel .owl-item.activee .cs-item .cs-text span {
 	opacity: 1;
 }
 
@@ -709,7 +709,7 @@ ol {
 	cursor: pointer;
 }
 
-.filter-controls ul li.active {
+.filter-controls ul li.activee {
 	color: #009603;
 }
 
