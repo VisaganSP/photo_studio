@@ -129,7 +129,6 @@
     },
   });
 
-
   /*------------------
         Image Popup
     --------------------*/
@@ -145,61 +144,57 @@
   });
 })(jQuery);
 
+// Function to load images from JSON file and filter them
+function loadImages(filter) {
+  const imageContainer = document.getElementById("image-container");
+  imageContainer.innerHTML = ""; // Clear existing images
 
+  // Load JSON data
+  fetch("images.json")
+    .then((response) => response.json())
+    .then((data) => {
+      data.forEach((image) => {
+        // Check if the image matches the filter or if the filter is "all"
+        if (filter === "all" || image.category === filter) {
+          // Create an image element
+          const img = document.createElement("img");
+          img.className = "mm-columns__img";
+          img.src = image.src;
+          img.loading = "lazy";
 
-  // Function to load images from JSON file and filter them
-  function loadImages(filter) {
-    const imageContainer = document.getElementById("image-container");
-    imageContainer.innerHTML = ""; // Clear existing images
+          // Create a div element for the image container
+          const div = document.createElement("div");
+          div.className = "mm-columns__item";
+          div.appendChild(img);
 
-    // Load JSON data
-    fetch("images.json")
-      .then((response) => response.json())
-      .then((data) => {
-        data.forEach((image) => {
-          // Check if the image matches the filter or if the filter is "all"
-          if (filter === "all" || image.category === filter) {
-            // Create an image element
-            const img = document.createElement("img");
-            img.className = "mm-columns__img";
-            img.src = image.src;
-            img.loading = "lazy";
+          // Append the image container to the image container
+          imageContainer.appendChild(div);
 
-            // Create a div element for the image container
-            const div = document.createElement("div");
-            div.className = "mm-columns__item";
-            div.appendChild(img);
-
-            // Append the image container to the image container
-            imageContainer.appendChild(div);
-
-            img.addEventListener("click", () => {
-                const modal = document.getElementById("image-modal");
-                const modalImage = document.getElementById("full-size-image");
-                modalImage.src = img.src;
-                modal.style.display = "block";
-              });
-          }
-        });
+          img.addEventListener("click", () => {
+            const modal = document.getElementById("image-modal");
+            const modalImage = document.getElementById("full-size-image");
+            modalImage.src = img.src;
+            modal.style.display = "block";
+          });
+        }
       });
-  }
-
-  // Initial load of all images
-  loadImages("all");
-
-  // Filter images when a filter button is clicked
-  const filterButtons = document.querySelectorAll(".filter-button");
-  filterButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      const filter = this.getAttribute("data-filter");
-      loadImages(filter);
     });
-  });
-  const modal = document.getElementById("image-modal");
-  modal.addEventListener("click", (event) => {
-    if (event.target === modal || event.target.className === "close") {
-      modal.style.display = "none";
-    }
-  });
+}
 
+// Initial load of all images
+// loadImages("all");
 
+// Filter images when a filter button is clicked
+const filterButtons = document.querySelectorAll(".filter-button");
+filterButtons.forEach((button) => {
+  button.addEventListener("click", function () {
+    const filter = this.getAttribute("data-filter");
+    loadImages(filter);
+  });
+});
+const modal = document.getElementById("image-modal");
+modal.addEventListener("click", (event) => {
+  if (event.target === modal || event.target.className === "close") {
+    modal.style.display = "none";
+  }
+});
