@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/search-dropdown-styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
@@ -44,69 +45,15 @@
         .main-div {
             padding: 30px;
         }
-
-        input {
-            width: 400px !important;
-            border-radius: 25px !important;
-            background-image: url('search.png');
-            /* Add your search icon image path here */
-            background-repeat: no-repeat;
-            /* Prevent icon repetition */
-            background-position: 15px center;
-            /* Adjust the icon's position */
-            background-size: 19px 19px;
-            /* Adjust the icon's size */
-            border-width: 2px;
-            margin-bottom: 5%;
-        }
-
-        input[type="search"] {
-            padding-left: 45px !important;
-            padding-top: 10px !important;
-            padding-bottom: 10px !important;
-        }
-
-        input:focus {
-            outline: solid 3px lightgreen;
-            border: none;
-        }
-
-        .select {
-            width: 60px;
-            border-width: 3px;
-            text-align: center;
-            font-size: 17px;
-        }
-
-        .select:focus {
-            /* outline:solid 2px lightgreen; */
-            border: 3px solid green;
-        }
-
-        @media only screen and (max-width:700px) {
-
-            input {
-                width: 250px !important;
-                border-radius: 25px !important;
-                background-image: url('search.png');
-                /* Add your search icon image path here */
-                background-repeat: no-repeat;
-                /* Prevent icon repetition */
-                background-position: 15px center;
-                /* Adjust the icon's position */
-                background-size: 19px 19px;
-                /* Adjust the icon's size */
-            }
-        }
     </style>
 
 </head>
 
 <body>
     <!-- Page Preloder -->
-    <div id="preloder">
+    <!-- <div id="preloder">
         <div class="loader"></div>
-    </div>
+    </div> -->
 
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
@@ -155,51 +102,39 @@
         </ul>
         <div class="tab-content text-center" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <form name="myform" action="" method="POST">
+                <!-- <form name="myform" action="" method="POST">
                     <div>
                         <input type="text" name="function" id="function-name" placeholder="Enter function name">
                         <input type="submit" name="functionClick" value="Get Payers" id="btnSave">
                     </div>
-                </form>
+                </form> -->
+
+                <div class="autocomplete">
+                    <form action="" method="POST" autocomplete="off" id="functionSearch" name="functionSearch">
+                        <input type="text" id="search-box" name="search-box" placeholder="Search..." required>
+                        <input type="submit" name="functionClick" value="Get Payers">
+                    </form>
+
+                    <ul id="suggestions-list"></ul>
+                </div>
 
                 <?php
-                if (isset($_POST["functionClick"]) && isset($_POST["function"])) {
+                if (isset($_POST["functionClick"]) && isset($_POST["search-box"])) {
                     $url = 'http://localhost/MoiSoftwareDb/payer_actions.php';
 
-                    echo $_POST["function"];
-                    $data1 = ['action' => 'GET_ALL_FUNC_PAYER', 'table_name' => $_POST["function"]];
+                    echo $_POST["search-box"];
+                    $data1 = ['action' => 'GET_ALL_FUNC_PAYER', 'table_name' => $_POST["search-box"]];
 
                     dataArangeFunc($url, $data1);
                 }
                 ?>
-                <!-- <table class="display nowrap cell-border" style="width:100%" id="myTable">
-                        <thead>
-                            <tr>
-                                <th>Id</th>
-                                <th>செலுத்துபவர் பெயர்</th>
-                                <th>செலுத்துபவர் இன்ஷியல்</th>
-                                <th>செலுத்துபவர் கைபேசி என்</th>
-                                <th>செலுத்துபவர் தொழில்</th>
-                                <th>செலுத்தும் பொருள்</th>
-                                <th>முறை</th>
-                                <th>தொகை</th>
-                                <th>பரிசு பொருள்</th>
-                                <th>உறவு முறை</th>
-                                <th>ஊர் இன்ஷியல்</th>
-                                <th>செலுத்துபவர் ஊர்</th>
-                                <th>செலுத்துபவர் முகவரி</th>
-                                <th>தேதி</th>
-                                <th>நேரம்</th>
-                            </tr>
-                        </thead> -->
-                <!-- <tbody id='body-tb'> -->
                 <?php
                 require_once('connection.php');
                 $url = 'http://localhost/MoiSoftwareDb/payer_actions.php';
                 // Change your desired function name in the functions table from moidatabase in 'table_name' -> 'value'
                 $data = ['action' => 'GET_ALL_FUNC_PAYER', 'table_name' => 'காதுகுத்து விழா-ராம்ஜி-22-07-2023'];
 
-                dataArangeFunc($url, $data);
+                // dataArangeFunc($url, $data);
 
                 function dataArangeFunc($url, $data)
                 {
@@ -222,7 +157,7 @@
                     // var_dump($result);
                     $data =  json_decode($result);
 
-                    if (count($data) > 0) {
+                    if ($data != null && count($data) > 0) {
                         // Open the table
                         // echo "<table class='display nowrap cell-border' style='width:100%' id='myTable'>";
                 ?>
@@ -276,6 +211,8 @@
                         echo "<tbody>";
                         // Close the table
                         // echo "</table>";
+                    } else {
+                        echo "<h1>No Payers found...</h1>";
                     }
                 }
 
@@ -285,7 +222,99 @@
                             </table>
                         </div>
             </div>
-            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">Function</div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <?php
+                require_once('connection.php');
+                $url = 'http://localhost/MoiSoftwareDb/function_actions.php';
+                // Change your desired function name in the functions table from moidatabase in 'table_name' -> 'value'
+                $data = ['action' => 'GET_ALL_FUNC'];
+
+                // dataArangeFunc($url, $data);
+                // use key 'http' even if you send the request to https://...
+                $selections = [
+                    'http' => [
+                        'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+                        'method' => 'POST',
+                        'content' => http_build_query($data),
+                    ],
+                ];
+
+                $context = stream_context_create($selections);
+                $result = file_get_contents($url, false, $context);
+
+                if ($result === false) {
+                    /* Handle error */
+                }
+
+                // var_dump($result);
+                $data =  json_decode($result);
+
+                if ($data != null && count($data) > 0) {
+                    // Open the table
+                    // echo "<table class='display nowrap cell-border' style='width:100%' id='myTable'>";
+                ?>
+                    <div class="main-div">
+                        <table class=" display nowrap cell-border " style="width:100%;" id="myTable1">
+                            <thead style="background-color:green;color:white;">
+                                <tr>
+                                    <th>Id</th>
+                                    <th>விழா பெயர்</th>
+                                    <th>விழா ஊர்</th>
+                                    <th>விழா இடம்</th>
+                                    <th>விழா தொடங்கும் தேதி</th>
+                                    <th>விழா ஆரம்ப நேரம் </th>
+                                    <th>விழா முடியும் தேதி</th>
+                                    <th>விழா முடியும் நேரம்</th>
+                                    <th>நாட்கள் </th>
+                                    <th>நடத்துபவர் </th>
+                                    <th>நடத்துபவர் கைபேசி எண் </th>
+                                    <th>விழா நாயகன் </th>
+                                    <th>விழா நாயகி </th>
+                                    <th>மொத்த செலவு</th>
+                                    <th>நடத்துபவர் ஊர் </th>
+                                    <th>நடத்துபவர் முகவரி</th>
+                                </tr>
+                            </thead>
+                        <?php
+                        echo "<tbody id='body-tb'>";
+
+                        // Cycle through the array
+                        foreach ($data as $idx => $function_data) {
+
+                            // Output a row
+                            echo "<tr>";
+                            echo "<td>$function_data->id</td>";
+                            echo "<td>$function_data->function_name</td>";
+                            echo "<td>$function_data->function_held_city</td>";
+                            echo "<td>$function_data->function_held_place</td>";
+                            echo "<td>$function_data->function_start_date</td>";
+                            echo "<td>$function_data->function_start_time</td>";
+                            echo "<td>$function_data->function_end_date</td>";
+                            echo "<td>$function_data->function_end_time</td>";
+                            echo "<td>$function_data->function_total_days</td>";
+                            echo "<td>$function_data->function_owner_name</td>";
+                            echo "<td>$function_data->function_owner_phno</td>";
+                            echo "<td>$function_data->function_hero_name</td>";
+                            echo "<td>$function_data->function_heroine_name</td>";
+                            echo "<td>$function_data->function_amt_spent</td>";
+                            echo "<td>$function_data->function_owner_city</td>";
+                            echo "<td>$function_data->function_owner_address</td>";
+                            echo "</tr>";
+                        }
+
+                        echo "<tbody>";
+                        // Close the table
+                        // echo "</table>";
+                    } else {
+                        echo "<h1>No Functions found...</h1>";
+                    }
+
+                        ?>
+
+                        <!-- </tbody> -->
+                        </table>
+                    </div>
+            </div>
         </div>
     </div>
 
@@ -381,36 +410,68 @@
     <!-- Js Plugins -->
     <script>
         console.log("Executed...");
-        var dataTable;
 
-        dataTable = $(document).ready(function() {
+        $(document).ready(function() {
             console.log("Executed...1");
 
             $('#myTable').DataTable({
-                // "pagingType": "full_numbers",
-                // "lengthMenu": [
-                //     [10, 25, 50, -1],
-                //     [10, 25, 50, "All"],
-                // ],
-                // responsive: true,
                 language: {
                     search: "",
                     searchPlaceholder: "Search records..",
 
                 },
-                // scrollX: true,
-                // scrollY: 500,
-                // scrollCollapse: true,
-                // scrollY: '100vh',
                 scrollX: true,
             });
-        }).ajax.reload();
 
-        $("#btnSave").click(function() {
-            dataTable.destroy();
-            // Bind();
-            return false;
+            $('#myTable1').DataTable({
+                language: {
+                    search: "",
+                    searchPlaceholder: "Search records..",
+
+                },
+                scrollX: true,
+            });
         });
+
+        // $(function() {
+
+        //     var visited = localStorage['visited'];
+        //     visited = false;
+        //     console.log(`visited: ${visited}`);
+        //     // if (!visited) {
+        //     //     init();
+        //     //     localStorage['visited'] = true;
+        //     // }
+
+        //     function init() {
+        //         const searchBox = document.getElementById("search-box");
+
+        //         console.log("loading,,,,,");
+
+        //         const options = {
+        //             method: 'POST',
+        //             url: 'http://localhost/MoiSoftwareDb/function_actions.php',
+        //             body: '{"action":"GET_ALL_FUNC"}',
+        //         };
+        //         fetch(`search_config.php?query=ரா`)
+        //             .then((response) =>
+        //                 // console.log(response.json());
+        //                 response.json()
+        //             )
+        //             .then((data) => {
+        //                 console.log("loading,,,,,32323232");
+        //                 console.log(data);
+
+        //                 data.forEach((data1, index) => {
+        //                     console.log(data1);
+
+        //                 });
+        //                 searchBox.value = data[data.length - 1];
+        //                 document.forms["functionSearch"].submit();
+        //             });
+        //     }
+
+        // });
     </script>
 
     <!-- <script src="js/jquery-3.3.1.min.js"></script> -->
@@ -421,6 +482,7 @@
     <script src="js/masonry.pkgd.min.js"></script>
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
+    <script src="js/search-dropdown.js"></script>
 
     <script src="js/main.js"></script>
 </body>
