@@ -4,20 +4,20 @@
 }
 
 #search-box {
-    width: 300px;
+    width: 350px;
     padding: 10px;
 }
 
 #suggestions-list {
-    position: absolute;
     list-style-type: none;
     padding: 0;
     margin: 0;
     border: 1px solid #ccc;
     max-height: 150px;
     overflow-y: auto;
-    width: 298px;
+    width: 350px;
     display: none;
+    position: absolute;
 }
 
 #suggestions-list li {
@@ -25,6 +25,28 @@
     cursor: pointer;
 }
 
-#suggestions-list li:hover {
+/* #suggestions-list li:hover {
     background-color: #f2f2f2;
+} */
+.focus{
+    background-color: lightgray;
+}
+@media only screen and (max-width:700px){
+    #search-box {
+        width: 200px;
+        padding: 10px;
+    }
+    #suggestions-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        border: 1px solid #ccc;
+        max-height: 150px;
+        overflow-y: auto;
+        width: 200px;
+        display: none;
+    } 
+}
+.get-payer{
+    height:2.8em !important;
 }
