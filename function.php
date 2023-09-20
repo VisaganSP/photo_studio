@@ -117,7 +117,7 @@ if ($_SESSION['username'] == '') {
                 <div class="navbar-nav  ml-auto m-2 justify-content-between">
                     <span class="pr-4"><a class="nav-link option activee"   href="function.php">FUNCTION TABLE</a></span>
                     <span class="pr-4"><a class="nav-link option"    href="payer.php">PAYER TABLE</a></span>
-                    <span class="pr-4"><a class="nav-link"  style="color:red;"   href="logout.php">LOGOUT</a></span>
+                    <span class="pr-4"><a class="nav-link btn btn-danger"style="color:white;"  href="logout.php">LOGOUT</a></span>
                 </div>
             </div>
         
