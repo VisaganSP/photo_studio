@@ -49,101 +49,15 @@ if (isset($_POST['login'])) {
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="css/login.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        /* Reset some default styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Style the body */
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f2f2f2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        /* Style the container */
-        .container {
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            max-width: 400px;
-            width: 100%;
-            text-align: center;
-        }
-
-        /* Style the form */
-        #login-form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* Style form inputs */
-        .input-container {
-            margin: 10px 0;
-            text-align: left;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-
-        /* Style the login button */
-        button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            padding: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        .un {
-            background-image: url('user.png');
-            /* Add your search icon image path here */
-            background-repeat: no-repeat;
-            /* Prevent icon repetition */
-            background-position: 15px center;
-            /* Adjust the icon's position */
-            background-size: 19px 19px;
-        }
-
-        .pd {
-            background-image: url('padlock.png');
-            /* Add your search icon image path here */
-            background-repeat: no-repeat;
-            /* Prevent icon repetition */
-            background-position: 15px center;
-            /* Adjust the icon's position */
-            background-size: 19px 19px;
-        }
-    </style>
-
 </head>
 
 <body>
@@ -173,44 +87,48 @@ if (isset($_POST['login'])) {
 
     </nav>
     <br><br><br><br><br>
-    <div class="container">
+    <div class="row justify-content-center mt-3">
+        <div class="col-lg-4 d-sm-none d-md-block left" style="box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);">
+
+        </div>
+        <div class="col-lg-4 col-sm-4 col-md-6 p-5 " style="background-color:#F3FDE8;">
         <?php if (isset($_SESSION['error'])) {
             echo $_SESSION['error'];
         } ?>
-        <form id="login-form" action="" method="post">
-            <h2>Login</h2>
-            <div class="input-container">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" placeholder="Please enter username" required>
-            </div>
-            <div class="input-container">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Please enter password" required>
-            </div>
-            <button type="submit" name="login">Login</button>
-        </form>
+       <form id="login-form" action="" method="post">
+    <h4 style="text-transform: capitalize;">Admin login</h4>
+    <div class="input-container">
+        <label for="username">Username</label>
+        <input type="text" class="un" id="username" name="username" placeholder="Enter your User name" required>
+    </div>
+    <div class="input-container">
+        <label for="password">Password</label>
+        <div class="password-container">
+            <input type="password" class="pd" id="password" name="password" placeholder="Enter your Password" required>
+            <span class="toggle-password" onclick="togglePasswordVisibility()">&#128065;</span>
+        </div>
+    </div>
+    <div class="input-container">
+        <button type="submit" name="login" class="btn btn-success pl-4 pr-4">Login</button>
+    </div>
+</form>
+    </d iv>
     </div>
 
     <script>
-        // document.addEventListener("DOMContentLoaded", function() {
-        //     const form = document.getElementById("login-form");
+    function togglePasswordVisibility() {
+        var passwordField = document.getElementById("password");
+        var toggleButton = document.querySelector(".toggle-password");
 
-        //     form.addEventListener("submit", function(e) {
-        //         e.preventDefault();
-
-        //         // Basic validation
-        //         const username = document.getElementById("username").value;
-        //         const password = document.getElementById("password").value;
-
-        //         if (username === "" || password === "") {
-        //             alert("Please fill in all fields.");
-        //         } else {
-        //             // You can add AJAX request or other logic for authentication here
-        //             alert("Login successful!");
-        //         }
-        //     });
-        // });
-    </script>
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            toggleButton.innerHTML = "&#128064;"; // Change to hide icon
+        } else {
+            passwordField.type = "password";
+            toggleButton.innerHTML = "&#128065;"; // Change to show icon
+        }
+    }
+</script>   
 
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>

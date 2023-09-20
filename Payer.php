@@ -87,14 +87,10 @@ if ($_SESSION['username'] == '') {
                 /* Adjust the icon's position */
                 background-size: 19px 19px;
             }
-        }
 
-        .active-p {
-            background-color: green;
-            color: white !important;
-            ;
-            border-radius: 10px;
-            padding: 10px;
+        }
+        .admin-nav{
+        margin-left:.5em ;
         }
     </style>
 
@@ -112,22 +108,21 @@ if ($_SESSION['username'] == '') {
     <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
 
     <!-- Header Section Begin -->
-    <nav class="navbar navbar-expand navbar-light table-p">
-        <!-- <a href="index.html"><img src="img/company_logo.png" class="logoo"></a> -->
-
-        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fa-solid fa-bars"></i>
-        </button> -->
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
-            <div class="navbar-nav text-center m-2 ">
-                <span class="pr-4"><a class="nav-link  active-p" href="Payer.php">Payer table</a></span>
-                <span class="pr-4"><a class="nav-link " href="Function.php">Function table</a></span>
-                <ul class="nav navbar-nav navbar-right">
-                    <a href="logout.php" class="btn btn-danger">Logout</a>
-                </ul>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" >
+      <a href="function.php"><img src="img/admin.png" style="height:50px;"></a>
+      <h5 class="admin-nav"> ADMIN PAGE</h5>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav  ml-auto m-2 justify-content-between">
+                    <span class="pr-4"><a class="nav-link option "   href="function.php">FUNCTION TABLE</a></span>
+                    <span class="pr-4"><a class="nav-link option activee"    href="payer.php">PAYER TABLE</a></span>
+                    <span class="pr-4"><a class="nav-link  "  style="color:red;"  href="logout.php">LOGOUT</a></span>
+                </div>
             </div>
-        </div>
-
+        
     </nav>
     <!-- Header End -->
 
@@ -138,7 +133,7 @@ if ($_SESSION['username'] == '') {
     <!-- Services Section Begin -->
     <br>
     <br>
-
+<br><br>
     <div class="text-center">
         <div class="autocomplete">
             <form action="" method="POST" autocomplete="off" id="functionSearch" name="functionSearch">
@@ -153,7 +148,7 @@ if ($_SESSION['username'] == '') {
         if (isset($_POST["functionClick"]) && isset($_POST["search-box"])) {
             $url = 'http://localhost/MoiSoftwareDbOnline/payer_actions.php';
 
-            echo "<h5 style='text-align:center; margin-top:10%;position:relative;'>" . $_POST['search-box'] . "</h5>";
+            echo "<h5 style='text-align:center;margin-top:3%;'>" . $_POST['search-box'] . "</h5>";
             $data1 = ['action' => 'GET_ALL_FUNC_PAYER', 'table_name' => $_POST["search-box"]];
 
             dataArangeFunc($url, $data1);
@@ -192,7 +187,7 @@ if ($_SESSION['username'] == '') {
                 // Open the table
                 // echo "<table class='display nowrap cell-border' style='width:100%' id='myTable'>";
         ?>
-                <div class="main-div">
+                <div class="main-div" style="">
                     <table class=" display nowrap cell-border " style="width:100%;" id="myTable">
                         <thead style="background-color:green;color:white;">
                             <tr>
@@ -338,7 +333,7 @@ if ($_SESSION['username'] == '') {
     </script>
 
     <!-- <h1 align="center"><?php echo $_SESSION['success']; ?></h1> -->
-    <h2 align="center">Welcome to the home page <?php echo $_SESSION['username']; ?></h2>
+    <!-- <h2 align="center">Welcome to the home page <?php echo $_SESSION['username']; ?></h2> -->
 
     <!-- <script src="js/jquery-3.3.1.min.js"></script> -->
     <!-- <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->

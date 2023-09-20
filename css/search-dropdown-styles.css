@@ -7,20 +7,30 @@
     width: 350px;
     padding: 10px;
 }
-
+.autocomplete {
+    position: relative;
+    z-index: 2; /* Set a higher z-index for the autocomplete container */
+}
+.main-div {
+    position: relative;
+    z-index: 1; /* Set a lower z-index for the main-div */
+    padding: 30px;
+}
 #suggestions-list {
-    list-style-type: none;
-    padding: 0;
+    list-style: none;
     margin: 0;
+    padding: 0;
+    position: absolute;
+    /* z-index: 999; */
+    width:350px;
+    max-height: 200px; /* Set the maximum height of the suggestion list */
+    overflow-y: auto; /* Add a vertical scrollbar if needed */
     border: 1px solid #ccc;
-    max-height: 150px;
-    overflow-y: auto;
-    width: 350px;
-    display: none;
-    /* position: absolute; */
+    background-color: #fff;
 }
 
 #suggestions-list li {
+    list-style: none;
     padding: 10px;
     cursor: pointer;
 }
@@ -37,14 +47,16 @@
         padding: 10px;
     }
     #suggestions-list {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        border: 1px solid #ccc;
-        max-height: 150px;
-        overflow-y: auto;
-        width: 200px;
-        display: none;
+        list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    /* z-index: 999; */
+    width:200px;
+    max-height: 200px; /* Set the maximum height of the suggestion list */
+    overflow-y: auto; /* Add a vertical scrollbar if needed */
+    border: 1px solid #ccc;
+    background-color: #fff;
     } 
 }
 .get-payer{

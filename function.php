@@ -88,13 +88,8 @@ if ($_SESSION['username'] == '') {
                 background-size: 19px 19px;
             }
         }
-
-        .active-p {
-            background-color: green;
-            color: white !important;
-            ;
-            border-radius: 10px;
-            padding: 10px;
+        .admin-nav{
+        margin-left:.5em ;
         }
     </style>
 
@@ -111,22 +106,21 @@ if ($_SESSION['username'] == '') {
     <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
 
     <!-- Header Section Begin -->
-    <nav class="navbar navbar-expand navbar-light table-p">
-        <!-- <a href="index.html"><img src="img/company_logo.png" class="logoo"></a> -->
-
-        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fa-solid fa-bars"></i>
-        </button> -->
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
-            <div class="navbar-nav text-center m-2 ">
-                <span class="pr-4"><a class="nav-link " href="Payer.php">Payer table</a></span>
-                <span class="pr-4"><a class="nav-link active-p" href="Function.php">Function table</a></span>
-                <ul class="nav navbar-nav navbar-right">
-                    <a href="logout.php" class="btn btn-danger">Logout</a>
-                </ul>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" >
+    <a href="function.php"><img src="img/admin.png" style="height:50px;"></a>
+    <h5 class="admin-nav"> ADMIN PAGE</h5>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav  ml-auto m-2 justify-content-between">
+                    <span class="pr-4"><a class="nav-link option activee"   href="function.php">FUNCTION TABLE</a></span>
+                    <span class="pr-4"><a class="nav-link option"    href="payer.php">PAYER TABLE</a></span>
+                    <span class="pr-4"><a class="nav-link"  style="color:red;"   href="logout.php">LOGOUT</a></span>
+                </div>
             </div>
-        </div>
-
+        
     </nav>
     <!-- Header End -->
 
@@ -136,7 +130,7 @@ if ($_SESSION['username'] == '') {
 
     <!-- Services Section Begin -->
     <br>
-    <br>
+    <br><br><br>
     <div>
 
         <?php
@@ -315,7 +309,7 @@ if ($_SESSION['username'] == '') {
                 // });
             </script>
 
-            <h2 align="center">Welcome to the home page <?php echo $_SESSION['username']; ?></h2>
+           
 
             <!-- <script src="js/jquery-3.3.1.min.js"></script> -->
             <!-- <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
