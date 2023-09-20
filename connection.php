@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "moidatabase";
+$dbname = "moidatabase_online";
 // $action = $_POST["action"];
 
 //create connection

@@ -3,7 +3,7 @@
 $servername = 'localhost';
 $username = 'root';
 $password = '';
-$database = 'moidatabase';
+$database = 'moidatabase_online';
 
 // Create a connection to the database
 $conn = new mysqli($servername, $username, $password, $database);
@@ -24,7 +24,7 @@ $matches = [];
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         // Concatenate the two column values into a single string
-        $combined = $row['function_name'] .'-'.$row['function_owner_name'].'-'. $row['function_start_date'];
+        $combined = $row['function_name'] . '-' . $row['function_owner_name'] . '-' . $row['function_start_date'];
         $matches[] = $combined;
     }
 }

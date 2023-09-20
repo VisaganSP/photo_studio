@@ -1,3 +1,11 @@
+<?php
+session_start();
+include 'connection.php';
+if ($_SESSION['username'] == '') {
+    header("location: login.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -45,7 +53,8 @@
         .main-div {
             padding: 30px;
         }
-        input[type="search"]{
+
+        input[type="search"] {
             width: 400px !important;
             padding-left: 45px !important;
             padding-top: 10px !important;
@@ -58,32 +67,35 @@
             /* Adjust the icon's position */
             background-size: 19px 19px;
         }
+
         input:focus {
             outline: solid 3px lightgreen;
             border: none;
         }
-        @media only screen and (max-width:700px){
-            input[type="search"]{
-            width: 250px !important;
-            padding-left: 45px !important;
-            padding-top: 10px !important;
-            padding-bottom: 10px !important;
-            background-image: url('search.png');
-            /* Add your search icon image path here */
-            background-repeat: no-repeat;
-            /* Prevent icon repetition */
-            background-position: 15px center;
-            /* Adjust the icon's position */
-            background-size: 19px 19px;
-        }  
+
+        @media only screen and (max-width:700px) {
+            input[type="search"] {
+                width: 250px !important;
+                padding-left: 45px !important;
+                padding-top: 10px !important;
+                padding-bottom: 10px !important;
+                background-image: url('search.png');
+                /* Add your search icon image path here */
+                background-repeat: no-repeat;
+                /* Prevent icon repetition */
+                background-position: 15px center;
+                /* Adjust the icon's position */
+                background-size: 19px 19px;
+            }
         }
-        .active-p{
-            background-color:green;
-            color: white !important;;
-            border-radius:10px;
-            padding:10px;
+
+        .active-p {
+            background-color: green;
+            color: white !important;
+            ;
+            border-radius: 10px;
+            padding: 10px;
         }
-      
     </style>
 
 
@@ -91,9 +103,9 @@
 
 <body>
     <!-- Page Preloder -->
-    <!-- <div id="preloder">
+    <div id="preloder">
         <div class="loader"></div>
-    </div> -->
+    </div>
 
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
@@ -110,6 +122,9 @@
             <div class="navbar-nav text-center m-2 ">
                 <span class="pr-4"><a class="nav-link  active-p" href="Payer.php">Payer table</a></span>
                 <span class="pr-4"><a class="nav-link " href="Function.php">Function table</a></span>
+                <ul class="nav navbar-nav navbar-right">
+                    <a href="logout.php" class="btn btn-danger">Logout</a>
+                </ul>
             </div>
         </div>
 
@@ -123,125 +138,125 @@
     <!-- Services Section Begin -->
     <br>
     <br>
-    
-    <div class="text-center">
-                <div class="autocomplete">
-                    <form action="" method="POST" autocomplete="off" id="functionSearch" name="functionSearch" >
-                        <input type="text" id="search-box" name="search-box" placeholder="Search function..." required>
-                        <input class="btn btn-success get-payer mb-1" type="submit" name="functionClick" value="Get Payers">
-                    </form>
 
-                    <ul id="suggestions-list"></ul>
+    <div class="text-center">
+        <div class="autocomplete">
+            <form action="" method="POST" autocomplete="off" id="functionSearch" name="functionSearch">
+                <input type="text" id="search-box" name="search-box" placeholder="Search function..." required>
+                <input class="btn btn-success get-payer mb-1" type="submit" name="functionClick" value="Get Payers">
+            </form>
+
+            <ul id="suggestions-list"></ul>
+        </div>
+
+        <?php
+        if (isset($_POST["functionClick"]) && isset($_POST["search-box"])) {
+            $url = 'http://localhost/MoiSoftwareDbOnline/payer_actions.php';
+
+            echo "<h5 style='text-align:center; margin-top:10%;position:relative;'>" . $_POST['search-box'] . "</h5>";
+            $data1 = ['action' => 'GET_ALL_FUNC_PAYER', 'table_name' => $_POST["search-box"]];
+
+            dataArangeFunc($url, $data1);
+        }
+        ?>
+        <?php
+        require_once('connection.php');
+        $url = 'http://localhost/MoiSoftwareDbOnline/payer_actions.php';
+        // Change your desired function name in the functions table from moidatabase in 'table_name' -> 'value'
+        $data = ['action' => 'GET_ALL_FUNC_PAYER', 'table_name' => 'காதுகுத்து விழா-ராம்ஜி-22-07-2023'];
+
+        // dataArangeFunc($url, $data);
+
+        function dataArangeFunc($url, $data)
+        {
+            // use key 'http' even if you send the request to https://...
+            $selections = [
+                'http' => [
+                    'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+                    'method' => 'POST',
+                    'content' => http_build_query($data),
+                ],
+            ];
+
+            $context = stream_context_create($selections);
+            $result = file_get_contents($url, false, $context);
+
+            if ($result === false) {
+                /* Handle error */
+            }
+
+            // var_dump($result);
+            $data =  json_decode($result);
+
+            if ($data != null && count($data) > 0) {
+                // Open the table
+                // echo "<table class='display nowrap cell-border' style='width:100%' id='myTable'>";
+        ?>
+                <div class="main-div">
+                    <table class=" display nowrap cell-border " style="width:100%;" id="myTable">
+                        <thead style="background-color:green;color:white;">
+                            <tr>
+                                <th>Id</th>
+                                <th>செலுத்துபவர் பெயர்</th>
+                                <th>செலுத்துபவர் இன்ஷியல்</th>
+                                <th>செலுத்துபவர் கைபேசி என்</th>
+                                <th>செலுத்துபவர் தொழில்</th>
+                                <th>செலுத்தும் பொருள்</th>
+                                <th>முறை</th>
+                                <th>தொகை</th>
+                                <th>பரிசு பொருள்</th>
+                                <th>உறவு முறை</th>
+                                <th>ஊர் இன்ஷியல்</th>
+                                <th>செலுத்துபவர் ஊர்</th>
+                                <th>செலுத்துபவர் முகவரி</th>
+                                <th>தேதி</th>
+                                <th>நேரம்</th>
+                            </tr>
+                        </thead>
+                <?php
+                echo "<tbody id='body-tb'>";
+
+                // Cycle through the array
+                foreach ($data as $idx => $payer_data) {
+
+                    // Output a row
+                    echo "<tr>";
+                    echo "<td>$payer_data->id</td>";
+                    echo "<td>$payer_data->payer_name</td>";
+                    echo "<td>$payer_data->payer_initial</td>";
+                    echo "<td>$payer_data->payer_phno</td>";
+                    echo "<td>$payer_data->payer_work</td>";
+                    echo "<td>$payer_data->payer_given_object</td>";
+                    echo "<td>$payer_data->payer_cash_method</td>";
+                    echo "<td>$payer_data->payer_amount</td>";
+                    echo "<td>$payer_data->payer_gift_name</td>";
+                    echo "<td>$payer_data->payer_relation</td>";
+                    echo "<td>$payer_data->payer_city_initial</td>";
+                    echo "<td>$payer_data->payer_city</td>";
+                    echo "<td>$payer_data->payer_address</td>";
+                    echo "<td>$payer_data->current_date1</td>";
+                    echo "<td>$payer_data->current_time1</td>";
+                    echo "</tr>";
+                }
+
+                echo "<tbody>";
+                // Close the table
+                // echo "</table>";
+            } else {
+                echo "<h1>No Payers found...</h1>";
+            }
+        }
+
+                ?>
+
+                <!-- </tbody> -->
+                    </table>
                 </div>
 
-                <?php
-                if (isset($_POST["functionClick"]) && isset($_POST["search-box"])) {
-                    $url = 'http://localhost/MoiSoftwareDb/payer_actions.php';
 
-                    echo "<h5 style='text-align:center; margin-top:10%;position:relative;'>" . $_POST['search-box'] . "</h5>";
-                    $data1 = ['action' => 'GET_ALL_FUNC_PAYER', 'table_name' => $_POST["search-box"]];
+    </div>
 
-                    dataArangeFunc($url, $data1);
-                }
-                ?>
-                <?php
-                require_once('connection.php');
-                $url = 'http://localhost/MoiSoftwareDb/payer_actions.php';
-                // Change your desired function name in the functions table from moidatabase in 'table_name' -> 'value'
-                $data = ['action' => 'GET_ALL_FUNC_PAYER', 'table_name' => 'காதுகுத்து விழா-ராம்ஜி-22-07-2023'];
 
-                // dataArangeFunc($url, $data);
-
-                function dataArangeFunc($url, $data)
-                {
-                    // use key 'http' even if you send the request to https://...
-                    $selections = [
-                        'http' => [
-                            'header' => "Content-type: application/x-www-form-urlencoded\r\n",
-                            'method' => 'POST',
-                            'content' => http_build_query($data),
-                        ],
-                    ];
-
-                    $context = stream_context_create($selections);
-                    $result = file_get_contents($url, false, $context);
-
-                    if ($result === false) {
-                        /* Handle error */
-                    }
-
-                    // var_dump($result);
-                    $data =  json_decode($result);
-
-                    if ($data != null && count($data) > 0) {
-                        // Open the table
-                        // echo "<table class='display nowrap cell-border' style='width:100%' id='myTable'>";
-                ?>
-                        <div class="main-div" >
-                            <table class=" display nowrap cell-border " style="width:100%;" id="myTable">
-                                <thead style="background-color:green;color:white;">
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>செலுத்துபவர் பெயர்</th>
-                                        <th>செலுத்துபவர் இன்ஷியல்</th>
-                                        <th>செலுத்துபவர் கைபேசி என்</th>
-                                        <th>செலுத்துபவர் தொழில்</th>
-                                        <th>செலுத்தும் பொருள்</th>
-                                        <th>முறை</th>
-                                        <th>தொகை</th>
-                                        <th>பரிசு பொருள்</th>
-                                        <th>உறவு முறை</th>
-                                        <th>ஊர் இன்ஷியல்</th>
-                                        <th>செலுத்துபவர் ஊர்</th>
-                                        <th>செலுத்துபவர் முகவரி</th>
-                                        <th>தேதி</th>
-                                        <th>நேரம்</th>
-                                    </tr>
-                                </thead>
-                        <?php
-                        echo "<tbody id='body-tb'>";
-
-                        // Cycle through the array
-                        foreach ($data as $idx => $payer_data) {
-
-                            // Output a row
-                            echo "<tr>";
-                            echo "<td>$payer_data->id</td>";
-                            echo "<td>$payer_data->payer_name</td>";
-                            echo "<td>$payer_data->payer_initial</td>";
-                            echo "<td>$payer_data->payer_phno</td>";
-                            echo "<td>$payer_data->payer_work</td>";
-                            echo "<td>$payer_data->payer_given_object</td>";
-                            echo "<td>$payer_data->payer_cash_method</td>";
-                            echo "<td>$payer_data->payer_amount</td>";
-                            echo "<td>$payer_data->payer_gift_name</td>";
-                            echo "<td>$payer_data->payer_relation</td>";
-                            echo "<td>$payer_data->payer_city_initial</td>";
-                            echo "<td>$payer_data->payer_city</td>";
-                            echo "<td>$payer_data->payer_address</td>";
-                            echo "<td>$payer_data->current_date1</td>";
-                            echo "<td>$payer_data->current_time1</td>";
-                            echo "</tr>";
-                        }
-
-                        echo "<tbody>";
-                        // Close the table
-                        // echo "</table>";
-                    } else {
-                        echo "<h1>No Payers found...</h1>";
-                    }
-                }
-
-                        ?>
-
-                        <!-- </tbody> -->
-                            </table>
-                        </div>
-
-           
-            </div>
-
-   
     <!-- Footer Section End -->
 
     <!-- Search model Begin -->
@@ -321,6 +336,9 @@
 
         // });
     </script>
+
+    <!-- <h1 align="center"><?php echo $_SESSION['success']; ?></h1> -->
+    <h2 align="center">Welcome to the home page <?php echo $_SESSION['username']; ?></h2>
 
     <!-- <script src="js/jquery-3.3.1.min.js"></script> -->
     <!-- <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->

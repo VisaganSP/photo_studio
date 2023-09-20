@@ -17,7 +17,7 @@
     overflow-y: auto;
     width: 350px;
     display: none;
-    position: absolute;
+    /* position: absolute; */
 }
 
 #suggestions-list li {
