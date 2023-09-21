@@ -32,6 +32,7 @@
 </head>
 
 <body>
+    
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -66,33 +67,40 @@
 
     <!-- Gallery Section Begin -->
     <br>
-
+    
     <section class="portfolio-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>Our latest works</h2>
-                    </div>
-                    <div class="filter-controls">
-                        <ul>
-                          <li class="filter-button" class="active" data-filter="all">All</li>
-                          <li class="filter-button" data-filter="wedding">Wedding</li>
-                          <li class="filter-button" data-filter="puberty">Puberty</li>
-                          <li class="filter-button" data-filter="baby shower">Baby shower</li>
-                        </ul>
-                      </div>
-                      <div class="mm-columns" id="image-container">
-                        <!-- Images will be loaded here using JavaScript -->
-                      </div>
-                      <div id="image-modal" class="modal">
-                        <span class="close">&times;</span>
-                        <img class="modal-content" id="full-size-image">
-                      </div>
-        <div class="load-more-btn">
-            <a href="#">Load More</a>
+        <div class="container" >
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="section-title">
+                <h2>Our latest works</h2>
+              </div>
+              <div class="filter-controls">
+                <ul>
+                  <li class="filter-button active-fil" data-filter="all">All</li>
+                  <li class="filter-button" data-filter="wedding">Wedding</li>
+                  <li class="filter-button" data-filter="puberty">Puberty</li>
+                  <li class="filter-button" data-filter="baby shower">Baby shower</li>
+                </ul>
+              </div>
+              <div >
+                <div class="mm-columns" id="image-container">
+                    <!-- <div class="loading" id="loading-indicator">Loading...</div> -->
+                  <!-- Images will be loaded here using JavaScript -->
+                </div>
+                <div id="image-modal" class="modal">
+                  <span class="close">&times;</span>
+                  <img class="modal-content" id="full-size-image">
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
+       
+        <!-- <div class="load-more-btn">
+          <a href="#">Load More</a>
+        </div> -->
+      </section>
     <!-- Gallery Section End -->
 
     <!-- Footer Section Begin -->
@@ -189,6 +197,7 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/grid-view.js"></script>
 </body>
 
 </html>

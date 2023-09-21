@@ -2,6 +2,13 @@ const searchBox = document.getElementById("search-box");
 const suggestionsList = document.getElementById("suggestions-list");
 const isFirstLoading = true;
 
+// Add event listener to hide suggestions list when clicking outside of the search box
+document.addEventListener("click", function (e) {
+  if (e.target !== searchBox && e.target !== suggestionsList) {
+    suggestionsList.style.display = "none";
+  }
+});
+
 function getSuggestions() {
   const inputValue = searchBox.value;
 
