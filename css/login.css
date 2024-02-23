@@ -1,0 +1,120 @@
+     /* Reset some default styles */
+     * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+  
+
+    /* Style the body */
+    body {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        background-image: url("bg.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        /* display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;*/
+    } 
+
+    /* Style the container */
+    /* .container {
+        background-color: #fff;
+        border-top-right-radius: 15px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        border-bottom-left-radius: 15px;
+        padding: 20px;
+        max-width: 400px;
+        width: 100%;
+        text-align: center;
+        margin-top: 3%;
+    } */
+    .container:hover{
+        box-shadow: 0 0 10px rgba(75, 197, 103, 0.2);
+    }
+
+    /* Style the form */
+    #login-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Style form inputs */
+    .input-container {
+        margin: 10px 0;
+        text-align: left;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 300px;
+        padding: 10px;
+        padding-left:15% ;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        border:2px solid green;
+    }
+    input::placeholder{
+        font-size: 15px;
+    }
+    input:focus{
+        outline:solid 2px lightgreen;
+        border:2px solid lightskyblue;
+        
+    }
+    .left{
+        background-image: url("admin.jpg") !important;
+        background-size:cover;
+        background-repeat: no-repeat;
+    }
+    .password-container {
+        position: relative;
+    }
+
+    .toggle-password {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        font-size:larger;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+    /* Style the login button */
+    /* button {
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        padding: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    } */
+
+
+    .un {
+        background-image: url('user.png');
+        /* Add your search icon image path here */
+        background-repeat: no-repeat;
+        /* Prevent icon repetition */
+        background-position: 15px center;
+        /* Adjust the icon's position */
+        background-size: 19px 19px;
+    }
+
+    .pd {
+        background-image: url('key.png');
+        /* Add your search icon image path here */
+        background-repeat: no-repeat;
+        /* Prevent icon repetition */
+        background-position: 11px center;
+        /* Adjust the icon's position */
+        background-size: 30px 30px;
+    }

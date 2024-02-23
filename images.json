@@ -1,55 +1,100 @@
  [
         {
-            "src": "img/portfolio/baby.jpg",
-            "category": "baby shower"
+            "src": "img/boomika/1.jpg",
+            "category": "photo"
         },
         {
-            "src": "img/portfolio/bs5.jpg",
-            "category": "baby shower"
+            "src": "img/boomika/2.jpg",
+            "category": "photo"
         },
         {
-            "src": "img/portfolio/wedding.jpg",
-            "category": "wedding"
+            "src": "img/boomika/AD.jpg",
+            "category": "photo"
         },
         {
-            "src": "img/portfolio/bs1.jpg",
-            "category": "baby shower"
+            "src": "img/boomika/3.jpg",
+            "category": "photo"
         },
         {
-            "src": "img/portfolio/bs.jpg",
-            "category": "baby shower"
+            "src": "img/boomika/4.jpg",
+            "category": "photo"
         },
         {
-            "src": "img/portfolio/p1.jpg",
-            "category": "puberty"
+            "src": "img/boomika/6.jpg",
+            "category": "photo"
         },
         {
-            "src": "img/portfolio/p2.jpg",
-            "category": "puberty"
+            "src": "img/boomika/7.jpg",
+            "category": "photo"
         },
         {
-            "src": "img/portfolio/p3.jpg",
-            "category": "puberty"
+            "src": "img/boomika/8.jpg",
+            "category": "photo"
         },
         {
-            "src": "img/portfolio/w7.jpg",
-            "category": "wedding"
+            "src": "img/boomika/S1.jpg",
+            "category": "stage"
         },
         {
-            "src": "img/portfolio/w4.jpg",
-            "category": "wedding"
+            "src": "img/boomika/S2.jpg",
+            "category": "stage"
         },
         {
-            "src": "img/portfolio/w6.jpg",
-            "category": "wedding"
+            "src": "img/boomika/S3.jpg",
+            "category": "stage"
         },
         {
-            "src": "img/portfolio/w7.jpg",
-            "category": "wedding"
+            "src": "img/boomika/S4.jpg",
+            "category": "stage"
         },
         {
-            "src": "img/portfolio/wedd.jpg",
-            "category": "wedding"
+            "src": "img/boomika/S5.jpg",
+            "category": "stage"
+        },
+        {
+            "src": "img/boomika/S6.jpg",
+            "category": "stage"
+        },
+        {
+            "src": "img/boomika/S7.jpg",
+            "category": "stage"
+        },
+        {
+            "src": "img/boomika/S1.jpg",
+            "category": "stage"
+        },
+        {
+            "src": "img/boomika/e.jpg",
+            "category": "photo"
+        },
+        {
+            "src": "img/boomika/v.jpg",
+            "category": "photo"
+        },
+        {
+            "src": "img/boomika/3.jpg",
+            "category": "makeup"
+        },
+        {
+            "src": "img/boomika/b1.jpg",
+            "category": "makeup"
+        },
+        {
+            "src": "img/boomika/b2.jpg",
+            "category": "makeup"
+        },
+        {
+            "src": "img/boomika/b2.jpg",
+            "category": "makeup"
+        },
+        {
+            "src": "img/boomika/b1.jpg",
+            "category": "makeup"
         }
+       
+       
+       
+       
+       
        
     ]

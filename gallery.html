@@ -32,6 +32,7 @@
 </head>
 
 <body>
+    
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -39,7 +40,7 @@
 
     <!-- Header Section Begin -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" >
-        <a href="index.html"><img src="img/company_logo.png" class="logoo"></a>
+        <a href="index.html"><img src="img/boomika/logo.png" class="logoo"></a>
         
             
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
@@ -50,10 +51,11 @@
                   <div class="navbar-nav  ml-auto m-2 justify-content-between">
                       <span class="pr-4"><a class="nav-link option "   href="index.html">HOME</a></span>
                       <span class="pr-4"><a class="nav-link option"    href="about.html">About</a></span>
-                      <span class="pr-4"><a class="nav-link option active"   href="gallery.html">Events</a></span>
-                      <span class="pr-4"><a class="nav-link option"   href="services.html">services</a></span>
+                      <span class="pr-4"><a class="nav-link option"    href="services.html">Moi services</a></span>
+                      <span class="pr-4"><a class="nav-link option activee"   href="gallery.html">Gallery</a></span>
                       <span class="pr-4"><a class="nav-link option"  href="pricing.html">Pricing</a></span>
                       <span class="pr-4"><a class="nav-link option"  href="contact.html">contact us</a></span>
+                      <span class="pr-4"><a class="nav-link option"  href="login.php">Login</a></span>
                   </div>
               </div>
           
@@ -66,107 +68,125 @@
 
     <!-- Gallery Section Begin -->
     <br>
-
+    
     <section class="portfolio-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>Our latest works</h2>
-                    </div>
-                    <div class="filter-controls">
-                        <ul>
-                          <li class="filter-button" class="active" data-filter="all">All</li>
-                          <li class="filter-button" data-filter="wedding">Wedding</li>
-                          <li class="filter-button" data-filter="puberty">Puberty</li>
-                          <li class="filter-button" data-filter="baby shower">Baby shower</li>
-                        </ul>
-                      </div>
-                      <div class="mm-columns" id="image-container">
-                        <!-- Images will be loaded here using JavaScript -->
-                      </div>
-                      <div id="image-modal" class="modal">
-                        <span class="close">&times;</span>
-                        <img class="modal-content" id="full-size-image">
-                      </div>
-        <div class="load-more-btn">
-            <a href="#">Load More</a>
+        <div class="container" >
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="section-title">
+                <h2>Our latest works</h2>
+              </div>
+              <div class="filter-controls">
+                <ul>
+                    <li class="filter-button active-fil"  data-filter="all">All</li>
+                    <!-- <li class="filter-button" data-filter="photo">Photography</li> -->
+                    <li class="filter-button" data-filter="stage">Stage decoration</li>
+                    <li class="filter-button" data-filter="makeup">Bridal makeup</li>
+                    <!-- <li class="filter-button" data-filter="moi">Moi</li> -->
+                </ul>
+              </div>
+              <div >
+                <div class="mm-columns" id="image-container">
+                    <!-- <div class="loading" id="loading-indicator">Loading...</div> -->
+                  <!-- Images will be loaded here using JavaScript -->
+                </div>
+                <div id="image-modal" class="modal">
+                  <span class="close">&times;</span>
+                  <img class="modal-content" id="full-size-image">
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
+       
+        <!-- <div class="load-more-btn">
+          <a href="#">Load More</a>
+        </div> -->
+      </section>
     <!-- Gallery Section End -->
 
     <!-- Footer Section Begin -->
     <footer class="footer-section">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="fs-about">
-                        <div class="fa-logo">
-                            <a href="index.html">
-                                <!-- <h2 style="color: white">logo</h2> -->
-                                  <img src="img/company_logo.png" style="height: 100px; width: 300px;"></img>
-                              </a>
-                        </div>
-                        <p>Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                            et dolore magna aliqua.</p>
-                        <div class="fa-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-youtube-play"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                        </div>
-                    </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="fs-about">
+                <div class="fa-logo">
+                  <a href="index.html">
+                    <!-- <h2 style="color: white">logo</h2> -->
+                      <img src="img/company_logo.png" style="height: 100px; width: 300px;"></img>
+                  </a>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="fs-widget">
-                        <h5>Instagram</h5>
-                        <div class="fw-instagram">
-                            <img src="img/instagram/insta-1.jpg" alt="">
-                            <img src="img/instagram/insta-2.jpg" alt="">
-                            <img src="img/instagram/insta-3.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="fs-widget">
-                        <h5>Quick links</h5>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="pricing.html">Pricing</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="fs-widget">
-                        <h5>Subscribe</h5>
-                        <p>Imolor amet consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                        <div class="fw-subscribe">
-                            <form action="#">
-                                <input type="text" placeholder="Email">
-                                <button type="submit"><i class="fa fa-send"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="copyright-text">
-                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;
-                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This
-                            Website is made with <i class="fa fa-heart" aria-hidden="true"></i> by Visai innovations
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
-                    </div>
-                </div>
+                <p>
+                  Explore the Artistry: Unveil Our Portfolio of Captivating Categories. From Timeless Portraits to Dynamic Events, Every Frame is a Work of Art
+                </p>
+                <!-- <div class="fa-social">
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><i class="fa fa-youtube-play"></i></a>
+                  <a href="#"><i class="fa fa-instagram"></i></a>
+                </div> -->
+              </div>
             </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="fs-widget">
+                <h5>Poomika Studio</h5>
+                <div class="fw-instagram">
+                  <img src="img/boomika/int.jpg" alt="" />
+                  <img src="img/boomika/interior.jpg" alt="" />
+                  <img src="img/boomika/entrence.jpg" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="fs-widget">
+                <h5>Quick links</h5>
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="services.html">Moi services</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+              </ul>
+              <ul>
+                  <li><a href="gallery.html">Gallery</a></li>
+                  <li><a href="services.html">Services</a></li>
+                  <li><a href="pricing.html">Pricing</a></li>
+                  <li><a href="login.php">Login</a></li>
+              </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="fs-widget">
+                <h5>Subscribe</h5>
+                <p>
+                  Stay Captivated: Subscribe for Exclusive Updates. Join our Visual Journey and be the First to Witness the Beauty Unfolding Through Our Lens.
+                </p>
+                <div class="fw-subscribe">
+                  <form action="#">
+                    <input type="text" placeholder="Email" />
+                    <button type="submit"><i class="fa fa-send"></i></button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="copyright-text">
+                <p>
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                  Copyright &copy;
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                  All rights reserved | This Website is made with
+                  <i class="fa fa-heart" aria-hidden="true"></i> by Visai
+                  innovations
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-    </footer>
+      </footer>
     <!-- Footer Section End -->
 
     <!-- Search model Begin -->
@@ -189,6 +209,7 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/grid-view.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,64 @@
+.autocomplete {
+    position: relative;
+    display: inline-block;
+}
+
+#search-box {
+    width: 350px;
+    padding: 10px;
+}
+.autocomplete {
+    position: relative;
+    z-index: 2; /* Set a higher z-index for the autocomplete container */
+}
+.main-div {
+    position: relative;
+    z-index: 1; /* Set a lower z-index for the main-div */
+    padding: 30px;
+}
+#suggestions-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    /* z-index: 999; */
+    width:350px;
+    max-height: 200px; /* Set the maximum height of the suggestion list */
+    overflow-y: auto; /* Add a vertical scrollbar if needed */
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+#suggestions-list li {
+    list-style: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* #suggestions-list li:hover {
+    background-color: #f2f2f2;
+} */
+.focus{
+    background-color: lightgray;
+}
+@media only screen and (max-width:700px){
+    #search-box {
+        width: 200px;
+        padding: 10px;
+    }
+    #suggestions-list {
+        list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    /* z-index: 999; */
+    width:200px;
+    max-height: 200px; /* Set the maximum height of the suggestion list */
+    overflow-y: auto; /* Add a vertical scrollbar if needed */
+    border: 1px solid #ccc;
+    background-color: #fff;
+    } 
+}
+.get-payer{
+    height:2.8em !important;
+}
