@@ -68,7 +68,7 @@ if (isset($_POST['login'])) {
 
     <!-- Header Section Begin -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-        <a href="index.html"><img src="img/company_logo.png" class="logoo"></a>
+        <a href="index.html"><img src="img/boomika/logo.png" class="logoo"></a>
 
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -78,7 +78,8 @@ if (isset($_POST['login'])) {
             <div class="navbar-nav  ml-auto m-2 justify-content-between">
                 <span class="pr-4"><a class="nav-link option " href="index.html">HOME</a></span>
                 <span class="pr-4"><a class="nav-link option" href="about.html">About</a></span>
-                <span class="pr-4"><a class="nav-link option " href="gallery.html">Events</a></span>
+                <span class="pr-4"><a class="nav-link option"    href="services.html">Moi services</a></span>
+                <span class="pr-4"><a class="nav-link option " href="gallery.html">Gallery</a></span>
                 <span class="pr-4"><a class="nav-link option" href="pricing.html">Pricing</a></span>
                 <span class="pr-4"><a class="nav-link option" href="contact.html">contact us</a></span>
                 <span class="pr-4"><a class="nav-link option activee" href="login.html">Login</a></span>

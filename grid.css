@@ -4,6 +4,11 @@
     margin-left: auto;
     }
      */
+     .filter-button.active-fil {
+      /* Add styles for the active filter here */
+      color: green;
+      font-weight: bold;
+    }
     .controls {
     text-align: center;
     margin: 0 auto 2rem;
